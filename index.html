@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jquery</title>
+  </head>
+  <body>
+    <p>Query is a fast, small, and feature-rich JavaScript library</p>
+    <p>hello1</p>
+    <p>hello2</p>
+    <p>hello3</p>
+    <button id="beauty">toggle</button>
+
+    <div id="wickey">
+      Hadji Ali (c. 1888–1892 – 1937) was a vaudeville performance artist famous
+      for acts of controlled regurgitation. Thought to be of Egyptian
+      extraction, his feats included water spouting, smoke swallowing and nut
+      and handkerchief swallowing followed by disgorgement in an order chosen by
+      the audience. The mainstay of Ali's act was water spouting (poster
+      pictured). After swallowing 60 to 100 glasses of water at a time, he
+      spouted it in a continuous stream sometimes for up to one minute. Ali's
+      most famous stunt, and the highlight of his act, was drinking water
+      followed by kerosene, and then acting by turns as a human flamethrower and
+      fire extinguisher as he expelled the two liquids onto a theatrical prop.
+      Ali had a dedicated following on the vaudeville circuit in the United
+      States and performed for heads of state, including Tsar Nicholas II of
+      Russia. After he died in England, his body was offered to Johns Hopkins
+      University for study, though the offer was declined. (Full article...)
+    </div>
+
+    <form>
+        <input id="inp" type="text"/>
+        <textarea id="ta">this is text area</textarea>
+    </form>
+  </body>
+  <!-- <script src="./jquery-3.7.1.js"></script> -->
+  <!-- <script src="./myjquery.js"></script> -->
+  <script
+    src="https://code.jquery.com/jquery-3.7.1.js"
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    // jquery ==$
+    console.log($);
+
+    // it takes the action when page reload like below p:first selctor
+    // $("selector").action();
+    // it clcik first p element
+    // $("p:first").click();
+
+    // it excute that function when action happen
+
+    $("document").ready(function () {
+      $("p").click(function () {
+        console.log("clicked on p", this);
+
+        // it hide all p
+        // $('p').hide()
+
+        // it hide only which i click
+        $(this).hide();
+
+        // three tupe of selector, id ,element,class
+        $("#id").click();
+        $(".class").click();
+      });
+
+      //   $("p").dblclick(function () {
+      //     console.log(" you double clicked on p", this);
+      //   });
+
+      // $("p").mouseenter(function () {
+      //     console.log(" you enter on p", this);
+      //   });
+
+      //events
+      //  mouse events= click, dbclick,mouseenter,mouseleave
+      // keyboard event= keypress,keydown,kepupevent
+      // form events=submit,change,focus,blur
+      // document/window: load,scroll.resize,unload
+
+      //   demoing on method , i can be use dfor multiple events
+      $("p").on({
+        click: function () {
+          console.log("thnaks for clicking", this);
+        },
+        mouseleave: function () {
+          console.log("mousse,leave", this);
+        },
+      });
+
+
+    //   hide and show with time it takes 2 sec for hiding
+    // $('#wickey').hide(2000,function () { 
+    //     // afyer hiding then it function executed and conslol that hide
+    //     console.log("hide cntent")
+    //  })
+    //  $('#wickey').show(2000,function () { 
+    //     // afyer hiding then it function executed and conslol that hide
+    //     console.log("show cntent")
+    //  })
+
+
+    // button click event
+
+    $('#beauty').click(function(){
+
+
+    //     $('#wickey').hide(2000,function () { 
+    //     // afyer hiding then it function executed and conslol that hide
+    //     console.log("hide cntent")
+    //  })
+
+    // it show both hide and show
+    //   $('#wickey').toggle(2000)
+
+    //   fadeout
+    // $('#wickey').fadeOut(2000,function(){
+    //     console.log("fadout")
+    // })
+    // $('#wickey').fadeIn(5000,function(){
+    //     console.log("fadin")
+    // })
+
+
+    // sliding slideup and sliddown
+    // $('#wickey').slideUp(1000)
+
+    // for both use slidetoggle
+    // $('#wickey').slideToggle(1000)
+
+
+    // animate method , in palcae of time 2000 ,we can use slow and fast
+    // $('#wickey').animate({
+    //     opacity:0.3,
+    //     height:'150px',
+    //     width:"200px"
+    // },2000)
+
+    // dom manipualtion
+    // it set the text
+    // $('#wickey').text("this is sagar")
+
+    // it gives you text
+    // $('#wickey').text()
+
+    // adding class
+    // $('#wickey').addClass('my class')
+
+    // adding css
+    // $('#wickey').css('background-color','red')
+
+    // it gives the background color value
+    $('#wickey').css('background-color')
+
+
+
+
+
+    // form fields always require val() method 
+
+    // it give value of text rea
+    // $('#ta').val()
+
+    // it set the value of text rea
+    // $('#ta').val("hello text rae")
+
+    // it empty the value of input tag
+    // $('#im').empty()
+
+    // it remove the impty tag in dom
+    // $('#im').remove()
+
+
+
+    // ajax: art  of xchanging data with server wiyhout loading page
+
+
+
+
+    })
+    });
+
+    
+    $.ajax({
+    url: 'https://code.jquery.com/jquery-3.7.1.js',
+    method: 'GET',
+    success: function(response) {
+        // Code to handle the response from the server
+        console.log(response);
+    },
+    error: function(xhr, status, error) {
+        // Code to handle errors
+        console.error(status, error);
+    }
+});
+  </script>
+</html>
